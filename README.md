@@ -1,4 +1,4 @@
-# sw-artifact-upload-artifactory-action
+# Upload Generic Artifact to Artifactory Composite Action
 Action for uploading generic artifact into Artifactory
 
 ### Parameters
