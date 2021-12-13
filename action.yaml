@@ -20,6 +20,7 @@ inputs:
   
   artifactory_repo_subpath:
     required: true
+    default: ${{ github.repository }}
     description: 'Sub path under third-party-installs repo'
 
   artifactory_secret:
