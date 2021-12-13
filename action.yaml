@@ -30,8 +30,8 @@ runs:
   using: "composite"
   steps: 
   - uses: jfrog/setup-jfrog-cli@v1
-      env:
-        JF_ARTIFACTORY_1: ${{ inputs.artifactory_secret }}
+    env:
+      JF_ARTIFACTORY_1: ${{ inputs.artifactory_secret }}
   
   - name: JFrog CLI Upload Artifact
     run: |
