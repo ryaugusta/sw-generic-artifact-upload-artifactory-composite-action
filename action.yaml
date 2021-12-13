@@ -24,7 +24,7 @@ inputs:
 
   artifactory_secret:
     required: true
-    description: '${{ secrets.JF_ARTIFACTORY_TOKEN }}'
+    description: 'JF Artifactory Token'
   
 runs:
   using: "composite"
