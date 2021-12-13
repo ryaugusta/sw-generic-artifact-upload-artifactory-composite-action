@@ -17,6 +17,10 @@ inputs:
     required: true
     default: third-party-installs
     description: 'Location for artifact to be deployed to'
+  
+  artifactory_repo_subpath:
+    required: true
+    description: 'Sub path under third-party-installs repo'
 
   artifactory_secret:
     required: true
@@ -31,7 +35,7 @@ runs:
   
   - name: JFrog CLI Upload Artifact
     run: |
-      jfrog rt upload --flat=false "${{ artifact_path }}/${{ artifact_name }}" ${{ artifactory_repo_name }}
+      jfrog rt upload --flat=false "${{ inputs.artifact_path }}/${{ inputs.artifact_name }}" ${{ inputs.artifactory_repo_name }}/${{ inputs.artifactory_repo_subpath }}
     shell: bash
         
 branding:
