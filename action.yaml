@@ -3,29 +3,28 @@ description: Upload a generic artifact into Artifactory
 author: DA Team <da.team@sherwin.com>
 
 inputs:
-
-  artifact_path: 
-    required: true
-    default: '${{ github.workspace }}'
-    description: 'Path to the artifact that needs to be scanned'
-
   artifact_name:
     required: true
     description: 'Name of the artifact to be scanned'
   
-  artifactory_repo_name:
+  artifactory_secret:
     required: true
+    description: 'JF Artifactory Token'
+  
+  artifact_path: 
+    required: false
+    default: '${{ github.workspace }}'
+    description: 'Path to the artifact that needs to be scanned'
+
+  artifactory_repo_name:
+    required: false
     default: third-party-installs
     description: 'Location for artifact to be deployed to'
   
   artifactory_repo_subpath:
-    required: true
+    required: false
     default: ${{ github.repository }}/${{ github.run_number }}
     description: 'Sub path under third-party-installs repo'
-
-  artifactory_secret:
-    required: true
-    description: 'JF Artifactory Token'
   
 runs:
   using: "composite"
