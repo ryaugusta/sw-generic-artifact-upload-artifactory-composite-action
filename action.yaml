@@ -1,1 +1,40 @@
+name: Generic Artifact Upload into Artifactory
+description: Upload a generic artifact into Artifactory
+author: DA Team <da.team@sherwin.com>
 
+inputs:
+
+  artifact_path: 
+    required: true
+    default: '${{ github.workspace }}'
+    description: 'Path to the artifact that needs to be scanned'
+
+  artifact_name:
+    required: true
+    description: 'Name of the artifact to be scanned'
+  
+  artifactory_repo_name:
+    required: true
+    default: third-party-installs
+    description: 'Location for artifact to be deployed to'
+
+  artifactory_secret:
+    required: true
+    description: '${{ secrets.JF_ARTIFACTORY_TOKEN }}'
+  
+runs:
+  using: "composite"
+  steps: 
+  - uses: jfrog/setup-jfrog-cli@v1
+      env:
+        JF_ARTIFACTORY_1: ${{ inputs.artifactory_secret }}
+  
+  - name: JFrog CLI Upload Artifact
+    run: |
+      jfrog rt upload --flat=false "${{ artifact_path }}/${{ artifact_name }}" ${{ artifactory_repo_name }}
+
+        
+        
+branding:
+  icon: git-branch
+  color: white
