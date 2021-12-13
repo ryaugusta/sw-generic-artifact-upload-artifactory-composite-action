@@ -35,7 +35,7 @@ runs:
   
   - name: JFrog CLI Upload Artifact
     run: |
-      jfrog rt upload --flat=false "${{ inputs.artifact_path }}/${{ inputs.artifact_name }}" ${{ inputs.artifactory_repo_name }}/${{ inputs.artifactory_repo_subpath }}
+      jfrog rt upload --flat=false "${{ inputs.artifact_path }}/${{ inputs.artifact_name }}" ${{ inputs.artifactory_repo_name }}/${{ inputs.artifactory_repo_subpath }}/${{ inputs.artifact_name }}
     shell: bash
         
 branding:
