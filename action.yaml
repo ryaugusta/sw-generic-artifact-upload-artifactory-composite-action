@@ -32,8 +32,7 @@ runs:
   - name: JFrog CLI Upload Artifact
     run: |
       jfrog rt upload --flat=false "${{ artifact_path }}/${{ artifact_name }}" ${{ artifactory_repo_name }}
-
-        
+    shell: bash
         
 branding:
   icon: git-branch
