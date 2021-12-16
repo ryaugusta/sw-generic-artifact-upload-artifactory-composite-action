@@ -5,7 +5,7 @@ author: DA Team <da.team@sherwin.com>
 inputs:
   artifact_name:
     required: true
-    description: 'Name of the artifact to be scanned'
+    description: 'Name of the artifact'
   
   artifactory_secret:
     required: true
@@ -14,7 +14,7 @@ inputs:
   artifact_path: 
     required: false
     default: '${{ github.workspace }}'
-    description: 'Path to the artifact that needs to be scanned'
+    description: 'Path to the artifact'
 
   artifactory_repo_name:
     required: false
