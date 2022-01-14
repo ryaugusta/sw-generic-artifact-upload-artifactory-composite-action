@@ -1,6 +1,6 @@
 # Upload Generic Artifact to Artifactory Composite Action
 Action for uploading generic artifact into Artifactory
-TEST
+TEST2
 ### Parameters
 | Name | Type |      | Default | Note | 
 | ---- | ---- | ---- | ------- | ---- |
