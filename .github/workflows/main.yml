@@ -9,4 +9,4 @@ jobs:
   test:
     runs-on: sw-ubuntu-latest
     steps:
-    - run: 'Hello'
+    - run: echo 'Hello'
